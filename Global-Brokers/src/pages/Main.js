@@ -32,7 +32,7 @@ export default function Main() {
       <StatusBar style={colorScheme == 'dark' ? 'light' : 'dark'} />
 
       <View onLayout={onLayoutRootView}>
-        <View className='my-5'>
+        <View className='my-0'>
           <Header />
 
           <Dashboard />

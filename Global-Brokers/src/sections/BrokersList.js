@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import InfoListBrokers from '../components/infoListBrokers';
+import InfoListBrokers from '../components/InfoListBrokers';
 import { listBrokers } from '../utils';
 
 export default function BrokersList() {
@@ -11,7 +11,7 @@ export default function BrokersList() {
       <Text
         className='text-3xl dark:text-white mb-4'
         style={{
-          fontFamily: 'SpaceGroteskBold',
+          fontFamily: 'rethinkSansBold',
         }}
       >
         Brokers
@@ -25,6 +25,7 @@ export default function BrokersList() {
         initialNumToRender={20}
         contentContainerStyle={{ paddingBottom: 100 }}
         removeClippedSubviews={false}
+        scrollEnabled={true}
         height={400}
         renderItem={({ item }) => <InfoListBrokers {...item} />}
         showsVerticalScrollIndicator={false}

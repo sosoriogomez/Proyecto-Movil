@@ -6,7 +6,6 @@ import * as React from 'react';
 import { useCallback } from 'react';
 import { Button, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import HeaderLogin from '../sections/HearderLogin.js';
 import MainLogin from '../sections/MainLogin.js';
 
 export default function App({ navigation }) {
@@ -33,7 +32,6 @@ export default function App({ navigation }) {
 
       <View onLayout={onLayoutRootView}>
         <View className='my-5'>
-          <HeaderLogin />
 
           <MainLogin />
 

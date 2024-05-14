@@ -1,43 +1,60 @@
 import { useColorScheme } from 'nativewind';
 import React from 'react';
-import { Text, TextInput } from 'react-native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
+import { Text, TextInput, View } from 'react-native';
 
 export default function MainLogin() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
   return (
-    <Animated.View className='mt-8' entering={FadeInDown.duration(500).springify().delay(300)}>
+    <View className='mt-20 '>
+
       {/* Title */}
       <Text
-        className='text-3xl dark:text-white mb-4'
+        className='text-3xl dark:text-white mb-4 flex-row justify-between text-center'
         style={{
           fontFamily: 'tiltNeon',
+          padding: 30
         }}
       >
         Global Brokers
       </Text>
 
+      <View>
+        
       <TextInput
-        className='text-3xl dark:text-white mb-4'
+        className='text-3xl dark:text-white mb-4 text-center'
         editable
         multiline
         numberOfLines={1}
         maxLength={40}
+
         // onChangeText={(text) => onChangeText(text)}
-        value={'Usuario'}
+        // value={'Usuario'}
         style={{ padding: 10 }}
       />
+
+      </View>  
+      <View>
+
       <TextInput
-        className='text-3xl dark:text-white mb-4'
+        className='text-3xl dark:text-white mb-4 text-center'
         editable
         multiline
         numberOfLines={1}
         secureTextEntry={true}
         maxLength={40}
         // onChangeText={(text) => onChangeText(text)}
-        value={'ABC'}
+        // value={'ABC'}
         style={{ padding: 10 }}
       />
-    </Animated.View>
+
+      </View>
+    </View>
   );
+
+  const style = StyleSheet.create({ 
+    baseText:{
+      borderBottomWith: 12,
+      borderBottomColor: "black" 
+    }
+  })
 }

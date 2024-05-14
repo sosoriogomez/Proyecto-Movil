@@ -46,14 +46,6 @@ export default function CountryItem({ pais, totalInversion, accionPopular, numer
         </View>
 
         <View className='space-y-2'>
-          <Text
-            className='text-0.5g text-white'
-            style={{
-              fontFamily: 'rethinkSans',
-            }}
-          >
-            {'' + totalInversion}
-          </Text>
 
           <Text
             className='font-medium text-0.5g text-white'
