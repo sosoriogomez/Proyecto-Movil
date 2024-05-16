@@ -46,6 +46,33 @@ export const listBrokers = [
   },
 ];
 
+export const listUsers = [
+  {
+    id: 1,
+    nombreUsuario: 'Santiago',
+    pais: 'Colombia',
+    saldo: 2331,
+  },
+  {
+    id: 2,
+    nombreUsuario: 'Mateo',
+    pais: 'Chile',
+    saldo: 30000,
+  },
+  {
+    id: 3,
+    nombreUsuario: 'Enrique',
+    pais: 'Argentina',
+    saldo: 2123,
+  },
+  {
+    id: 4,
+    nombreUsuario: 'Luis',
+    pais: 'Paraguay',
+    saldo: 500,
+  },
+];
+
 export const infoBroker = [
   {
     id: 1,
@@ -89,5 +116,12 @@ infoBroker.forEach((item) => {
       style: 'currency',
       currency: 'USD',
     });
+  });
+});
+
+listUsers.forEach((item) => {
+  item.saldo = item.saldo.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
   });
 });
