@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     paddingHorizontal: 20,
-    borderColor: 'lightblue',
+    borderColor: 'indigo',
     borderWidth: 1,
     borderRadius: 7,
   },
@@ -79,9 +79,9 @@ const styles = StyleSheet.create({
     width: 170,
   },
   button: {
-    backgroundColor: 'lightblue',
+    backgroundColor: 'indigo',
     height: 45,
-    borderColor: 'gray',
+    borderColor: 'indigo',
     borderWidth: 1,
     borderRadius: 5,
     alignItems: 'center',

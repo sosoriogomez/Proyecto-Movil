@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { FlatList, Text, TextInput, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import InfoListUser from '../components/InfoListUser';
-import { listUsers } from '../utils';
+import { InfoListUser } from '../utils';
 
 const { width, height } = Dimensions.get('window');
 
-export default function UsersList() {
+export default function UserStockList() {
   const [searchQuery, setSearchQuery] = useState('');
   const [data, setData] = useState(listUsers);
 
@@ -53,19 +53,6 @@ export default function UsersList() {
       >
         Usuarios
       </Text>
-      <TextInput
-        className='text-3xl dark:text-white mb-3'
-        style={{
-          fontFamily: 'rethinkSansBold',
-        }}
-        clearButtonMode='always'
-        placeholder='Buscar'
-        editable={true}
-        autoCorrect={false}
-        value={searchQuery}
-        onChangeText={(listUsers) => handleSearch(listUsers)}
-      ></TextInput>
-
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}

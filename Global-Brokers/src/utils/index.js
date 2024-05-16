@@ -103,6 +103,38 @@ export const infoBroker = [
   },
 ];
 
+export const infoUser = [
+  {
+    id: 1,
+    nombreUsuario: 'Mateo',
+    nombrePais: 'Colombia',
+    saldo: 2300,
+    correo: 'm@gail.com',
+    listAcciones: [
+      {
+        id: 1,
+        nombre: 'Ecopetrol',
+        precio: 22,
+        numAcciones: 8,
+        inversionTotal: 196
+      },
+      {
+        id: 2,
+        nombre: 'BBVA',
+        precio: 20,
+        numAcciones: 15,
+        inversionTotal: 300
+      },      {
+        id: 1,
+        nombre: 'Coca Cola',
+        precio: 120,
+        numAcciones: 2,
+        inversionTotal: 200
+      },
+    ],
+  },
+];
+
 infoPaises.forEach((item) => {
   item.totalInversion = item.totalInversion.toLocaleString('en-US', {
     style: 'currency',
@@ -125,3 +157,19 @@ listUsers.forEach((item) => {
     currency: 'USD',
   });
 });
+
+infoUser.forEach((item) => {
+  item.saldo = item.saldo.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+  item.listAcciones.precio = item.listAcciones.precio.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+  item.listAcciones.inversionTotal = item.listAcciones.inversionTotal.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+});
+
