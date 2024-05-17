@@ -6,11 +6,11 @@ const { width, height } = Dimensions.get('window');
 export default function InfoUserStocks({ nombre, precio, numAcciones, inversionTotal}) {
   return (
     <View
-      className=' py-8 px-4 justify-between flex-row items-center bg-[#e5e5e5] shadow-sm'
+      className='rounded-3xl py-8 px-4 justify-between flex-row items-center bg-[#e5e5e5] shadow-sm'
       style={{
         width: '100%',
         maxWidth: width,
-        height: height * 0.12,
+        height: height * 0.15,
       }}
     >
       <View className='flex-row space-x-6 items-center justify-center'>

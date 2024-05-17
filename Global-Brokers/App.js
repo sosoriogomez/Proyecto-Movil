@@ -4,6 +4,7 @@ import * as React from 'react';
 import Login from './src/pages/Login.js';
 import Main from './src/pages/Main.js';
 import Users from './src/pages/Users.js';
+import InfoUser from './src/pages/InfoUser.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export default function App(navigation) {
         <Stack.Screen name='Ingresar' component={Login} options={{ headerShown: false }} />
         <Stack.Screen name='Inicio' component={Main} options={{ headerShown: false }} />
         <Stack.Screen name='Usuarios' component={Users} options={{ headerShown: false }} />
+        <Stack.Screen name='Info Usuario' component={InfoUser} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
