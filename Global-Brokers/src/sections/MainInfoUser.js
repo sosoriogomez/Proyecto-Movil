@@ -1,38 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
+import { infoUser } from '../utils';
 
 const { width, height } = Dimensions.get('window');
 
-export default function MainInfoUser({ id, nombreUsuario, nombrePais, saldo, correo }) {
+export default function MainInfoUser() {
+  const [data, setData] = useState(infoUser);
   return (
     <TouchableOpacity className='mr-3'>
       <View
-        className='rounded-3xl py-4 px-4 justify-between'
+        className='rounded-3xl py-9 px-5 justify-between mt-5'
         style={{
-          width: width * 0.4,
-          height: height * 0.28,
-          backgroundColor: '#0D3D56',
+          width: width * 0.9,
+          height: height * 0.22,
+          backgroundColor: 'darkblue',
         }}
       >
         <View className='space-y-2'>
           <Text
-            className='text-1g text-white'
+            className='text-4xl text-white'
             style={{
               fontFamily: 'rethinkSansBold',
             }}
           >
-            {nombreUsuario}
+            {data.nombreUsuario}
           </Text>
         </View>
-
-        <View className='space-y-2'>
+        <View className='space-y-1'>
           <Text
-            className='text-0.5g text-white'
+            className='text-xl text-white'
             style={{
               fontFamily: 'rethinkSans',
             }}
           >
-            {nombrePais}
+            {data.nombrePais}
           </Text>
 
           <Text
@@ -41,7 +42,7 @@ export default function MainInfoUser({ id, nombreUsuario, nombrePais, saldo, cor
               fontFamily: 'rethinkSans',
             }}
           >
-            {saldo}
+            {data.saldo}
           </Text>
         </View>
 
@@ -53,7 +54,7 @@ export default function MainInfoUser({ id, nombreUsuario, nombrePais, saldo, cor
               fontFamily: 'rethinkSans',
             }}
           >
-            {correo}
+            {data.correo}
           </Text>
         </View>
       </View>

@@ -52,7 +52,7 @@ export default function MainLogin() {
       </View>
 
       <View style={styles.buttonView}>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('Usuarios')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('Info Usuario')}>
           <Text style={styles.buttonText}>LOGIN</Text>
         </Pressable>
       </View>

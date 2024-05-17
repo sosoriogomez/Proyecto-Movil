@@ -1,36 +1,16 @@
-import filter from 'lodash.filter';
 import React, { useState } from 'react';
-import { FlatList, Text, TextInput, View } from 'react-native';
+import { useColorScheme } from 'nativewind';
+import { StatusBar } from 'expo-status-bar';
+import { FlatList, Text, View, Dimensions } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import InfoListUser from '../components/InfoListUser';
-import { InfoListUser } from '../utils';
+import InfoUserStocks from '../components/InfoUserStocks';
+import { infoUser } from '../utils';
 
 const { width, height } = Dimensions.get('window');
 
 export default function UserStockList() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [data, setData] = useState(listUsers);
-
-  const handleSearch = (query) => {
-    console.log(query);
-    setSearchQuery(query);
-    const formattedQuery = query.toLowerCase();
-    const filteredData = filter(listUsers, (user) => {
-      return contains(user, formattedQuery);
-    });
-    setData(filteredData);
-  };
-
-  const contains = ({ nombreUsuario, pais }, query) => {
-    let nombre = nombreUsuario.toLowerCase();
-    let lPais = pais.toLowerCase();
-
-    if (nombre.includes(query) || lPais.includes(query)) {
-      console.log('incluye');
-      return true;
-    }
-    return false;
-  };
+  const [data, setData] = useState(infoUser.listAcciones);
+  const { colorScheme, toggleColorScheme } = useColorScheme();
 
   return (
     <Animated.View className='mt-8' entering={FadeInDown.duration(500).springify().delay(300)}>
@@ -38,20 +18,16 @@ export default function UserStockList() {
       {/* Title */}
     <View 
         style={{
-          width: width * 1,
+          width: width * 0.9,
           height: height * 0.8,
-          backgroundColor: '#000000',
         }}>
-
-
-    </View>
       <Text
         className='text-3xl dark:text-white mb-4'
         style={{
           fontFamily: 'rethinkSansBold',
         }}
       >
-        Usuarios
+      Inventario de Acciones
       </Text>
       <FlatList
         data={data}
@@ -61,10 +37,12 @@ export default function UserStockList() {
         removeClippedSubviews={false}
         scrollEnabled={true}
         height={400}
-        renderItem={({ item }) => <InfoListUser {...item} />}
+        renderItem={({ item }) => <InfoUserStocks {...item} />}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <View className='h-4' />}
       />
+    </View>
     </Animated.View>
   );
+
 }

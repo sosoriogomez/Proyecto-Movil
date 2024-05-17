@@ -1,15 +1,18 @@
 import filter from 'lodash.filter';
 import React, { useState } from 'react';
-import { FlatList, Text, TextInput, View } from 'react-native';
+import { FlatList, Text, TextInput, View, Dimensions } from 'react-native';
+
+
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import InfoListUser from '../components/InfoListUser';
 import { listUsers } from '../utils';
 
-const { width, height } = Dimensions.get('window');
 
 export default function UsersList() {
   const [searchQuery, setSearchQuery] = useState('');
   const [data, setData] = useState(listUsers);
+
+  const { width, height } = Dimensions.get('window');
 
   const handleSearch = (query) => {
     console.log(query);
@@ -34,17 +37,13 @@ export default function UsersList() {
 
   return (
     <Animated.View className='mt-8' entering={FadeInDown.duration(500).springify().delay(300)}>
-    <StatusBar style={colorScheme == 'dark' ? 'light' : 'dark'} />
       {/* Title */}
     <View 
         style={{
-          width: width * 1,
-          height: height * 0.8,
-          backgroundColor: '#000000',
+          width: width * .9,
+          height: height * .9,
+
         }}>
-
-
-    </View>
       <Text
         className='text-3xl dark:text-white mb-4'
         style={{
@@ -54,12 +53,13 @@ export default function UsersList() {
         Usuarios
       </Text>
       <TextInput
-        className='text-3xl dark:text-white mb-3'
+        className='text-3xl dark:text-white mb-3 .placeholder-green'
         style={{
           fontFamily: 'rethinkSansBold',
         }}
         clearButtonMode='always'
         placeholder='Buscar'
+        placeholderTextColor={'grey'}
         editable={true}
         autoCorrect={false}
         value={searchQuery}
@@ -78,6 +78,7 @@ export default function UsersList() {
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <View className='h-4' />}
       />
+    </View>
     </Animated.View>
   );
 }

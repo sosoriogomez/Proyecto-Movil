@@ -73,8 +73,8 @@ export const listUsers = [
   },
 ];
 
-export const infoBroker = [
-  {
+export const infoBroker = 
+  [{
     id: 1,
     nombreBroker: 'Interactive Brokers',
     paisesOperativos: 'Colombia, Chile',
@@ -100,10 +100,9 @@ export const infoBroker = [
         paisResidencia: 'Colombia',
       },
     ],
-  },
-];
+  }];
 
-export const infoUser = [
+export const infoUser = 
   {
     id: 1,
     nombreUsuario: 'Mateo',
@@ -132,8 +131,7 @@ export const infoUser = [
         inversionTotal: 200
       },
     ],
-  },
-];
+  };
 
 infoPaises.forEach((item) => {
   item.totalInversion = item.totalInversion.toLocaleString('en-US', {
@@ -158,18 +156,21 @@ listUsers.forEach((item) => {
   });
 });
 
-infoUser.forEach((item) => {
-  item.saldo = item.saldo.toLocaleString('en-US', {
+
+infoUser.saldo = infoUser.saldo.toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
   });
-  item.listAcciones.precio = item.listAcciones.precio.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-  item.listAcciones.inversionTotal = item.listAcciones.inversionTotal.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-});
+
+  infoUser.listAcciones.forEach((accion) =>{
+
+    accion.precio = accion.precio.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    accion.inversionTotal = accion.inversionTotal.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+  })
 

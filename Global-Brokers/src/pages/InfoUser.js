@@ -7,7 +7,8 @@ import { useCallback } from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../sections/Hearder.js';
-import UsersList from '../sections/UsersList.js';
+import MainInfoUser from '../sections/MainInfoUser.js';
+import UserStockList from '../sections/UserStocksList.js';
 
 export default function InfoUser(id) {
   const { colorScheme, toggleColorScheme } = useColorScheme();
@@ -34,7 +35,8 @@ export default function InfoUser(id) {
       <View onLayout={onLayoutRootView}>
         <View className='my-1'>
           <Header />
-          <UsersList />
+          <MainInfoUser/>
+          <UserStockList/>
         </View>
       </View>
     </SafeAreaView>
