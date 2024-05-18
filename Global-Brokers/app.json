@@ -1,4 +1,7 @@
 {
+  "runtimeVersion": {
+    "policy": "sdkVersion"
+  },
   "expo": {
     "name": "Global-Brokers",
     "slug": "Global-Brokers",
@@ -11,9 +14,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
